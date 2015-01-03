@@ -35,10 +35,10 @@ public class VCTBank {
         double kontostand = 0;
         String kontoart = null;
         
-        
    
        try {
            while(beforeVctData.rs.next()){
+               
                
                int kid = eaiB.intigratedCustomers.size() + 1;
                vorname = "";
@@ -51,10 +51,15 @@ public class VCTBank {
                kontostand = 0;
                kontoart = "";
                
-               
+               boolean deleted = false;
                /*****************************Customer intigration***********************/
                
-               
+                              //Kontoart
+               String kundenart = beforeVctData.rs.getString("Kundenart");
+               if(kundenart.equalsIgnoreCase("Firma")){
+                   deleted = true;
+               }
+               if(!deleted){
                // Vor und Nachname
                String[] ganzername = beforeVctData.rs.getString("Kundenname").split(" ");
                
@@ -132,16 +137,19 @@ public class VCTBank {
                
                
                //Kontoart
-               String kundenart = beforeVctData.rs.getString("Kundenart");
+               kundenart = beforeVctData.rs.getString("Kundenart");
                if(kundenart.equalsIgnoreCase("Firma")){
-                   kontoart = "Kontokorrent";
+                   deleted = true;
                }else{
                    kontoart = "Privatkonto";
                }
                
                // Zielkonto erstellen
-               IntiBankAccount intiBA = new IntiBankAccount(eaiB.returnClientID(nachname), IBAN, kontostand, kontoart);
-               eaiB.intigratedAccounts.add(intiBA);
+             
+                    IntiBankAccount intiBA = new IntiBankAccount(eaiB.returnClientID(nachname), IBAN, kontostand, kontoart);
+                    eaiB.intigratedAccounts.add(intiBA);
+               }
+
                
            }
        } catch (SQLException ex) {

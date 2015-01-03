@@ -129,7 +129,7 @@ public class GUI extends JFrame implements ActionListener{
                                 jplAccount.add(new JLabel(eaiB.intigratedAccounts.get(j).IBAN));
 
                                 jplAccount.add(new JLabel("Kontostand: "));
-                                jplAccount.add(new JLabel(Double.toString(eaiB.intigratedAccounts.get(j).kontostand)));                           
+                                jplAccount.add(new JLabel(eaiB.convertCurr(Double.toString(eaiB.intigratedAccounts.get(j).kontostand))));                           
 
                                 jplAccount.add(new JLabel("Kontoart:"));
                                 jplAccount.add(new JLabel(eaiB.intigratedAccounts.get(j).kontoart));

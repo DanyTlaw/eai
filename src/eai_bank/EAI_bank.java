@@ -21,6 +21,8 @@ public class EAI_bank {
     public static ArrayList<IntiCustomer> intigratedCustomers = new ArrayList<IntiCustomer>(); 
     public static ArrayList<IntiBankAccount> intigratedAccounts = new ArrayList<IntiBankAccount>(); 
     
+    int kontostandCount;
+    
     /**
      * @param args the command line arguments
      */
@@ -37,6 +39,9 @@ public class EAI_bank {
         vctB.vctIntigration(eaiB);
         jdB.jdIntegration(eaiB);
 
+        //Status hinzufügen
+        makeStatus(eaiB);
+        
         //GUi geöffnet mit Daten
         GUI gui = new GUI(eaiB);
         
@@ -48,7 +53,50 @@ public class EAI_bank {
     
     /*****************************Intigration Standard Methods*********************/
     
-    //Methode welche Umlate umwandelt
+    //Method for setting the Member status
+    public static String setStatus(double kontostand){
+        
+        String status = "";
+        
+        int gold = 1000000;
+        int silber = 50000;
+        int bronze = 0;
+        
+        if(kontostand>= gold){
+             status = "Gold";
+        }else if(kontostand<gold && kontostand >= silber){
+             status = "Silber";
+        }else if(kontostand<silber && kontostand >= bronze){
+             status = "Bronze";
+        }
+        return status;
+    }
+    
+    //Method with return of all accounts form one person
+    public static double accountValue(EAI_bank eaiB, int i){
+        double value = 0;
+        double amount = 0;  
+        int kid = eaiB.intigratedCustomers.get(i).KID;
+        
+        for(int j = 0; j< eaiB.intigratedAccounts.size(); j++){
+            if(eaiB.intigratedAccounts.get(j).KID==kid){
+                amount = eaiB.intigratedAccounts.get(j).kontostand;
+                System.out.println(amount);
+                value = value + amount;
+            }
+
+        }
+        System.out.println(value);
+        return value;
+    }
+    
+    public static void makeStatus(EAI_bank eaiB){
+        for(int i = 0; i< eaiB.intigratedCustomers.size(); i++){
+            eaiB.intigratedCustomers.get(i).status = setStatus(accountValue(eaiB, i));
+        }
+    }
+    
+    //Method for convert "Umlauts"  
     public String replaceUmlaut(String input){
     String result =
         input
@@ -60,7 +108,7 @@ public class EAI_bank {
     }
     
         // Formate Money output
-    private static String convertCurr(String number){
+    public static String convertCurr(String number){
         // Set locale to swiss
         Locale locale = new Locale("de", "CH");
         NumberFormat nformat = DecimalFormat.getCurrencyInstance(locale);
