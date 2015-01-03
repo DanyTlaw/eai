@@ -81,7 +81,6 @@ public class EAI_bank {
         for(int j = 0; j< eaiB.intigratedAccounts.size(); j++){
             if(eaiB.intigratedAccounts.get(j).KID==kid){
                 amount = eaiB.intigratedAccounts.get(j).kontostand;
-                System.out.println(amount);
                 value = value + amount;
             }
 

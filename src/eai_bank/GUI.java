@@ -49,7 +49,7 @@ public class GUI extends JFrame implements ActionListener{
         JPanel jplCenter = new JPanel();
        
         JPanel jplSouth = new JPanel();
-        jplSouth.setLayout(new BoxLayout(jplSouth, BoxLayout.X_AXIS));
+        
 
         JPanel jplData = new JPanel();
         jplData.setLayout(new GridLayout(4,1));
@@ -164,6 +164,7 @@ public class GUI extends JFrame implements ActionListener{
         this.setSize(700,600);
         this.setLocation(300,300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("EAI Bank");
         this.setVisible(true);
     }
 
