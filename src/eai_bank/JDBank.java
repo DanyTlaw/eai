@@ -81,7 +81,11 @@ public class JDBank {
             if(beforeSparData.get(i).vName.value.toString().equalsIgnoreCase("Bendel")){
                 vorname = "Oliver";
                 nachname = "Bendel";
-            } else {
+            }else if(beforeSparData.get(i).nName.value.toString().equalsIgnoreCase("HINKELMANN")){
+                vorname = beforeSparData.get(i).vName.value.toString();
+                nachname = "Hinkelmann";
+            } 
+            else {
                 vorname = beforeSparData.get(i).vName.value.toString();
                 nachname = beforeSparData.get(i).nName.value.toString();
             }

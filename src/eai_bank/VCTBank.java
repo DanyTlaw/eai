@@ -72,8 +72,13 @@ public class VCTBank {
                     if(ganzername.length==1){
                         vorname = ganzername[0];
                     }
-
+                    //Hinkelmann is with all Upercase in db so this has to be switched
+                    else if(ganzername[0].equalsIgnoreCase("Knut")){
+                        vorname = ganzername[0];
+                        nachname = "Hinkelmann";
+                    }
                     else if(ganzername.length==2 ){
+
                         // Standard Name
                         vorname = ganzername[0];
                         nachname = ganzername[1];
