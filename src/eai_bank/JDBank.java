@@ -62,7 +62,7 @@ public class JDBank {
         String kontoart = null;
 
     
-        //Schlaufe welche für jeden Kunden mit einem SparKonto ein zielkunde erstellt und die Daten richtig migriert
+        //Loop intigrates the data for each customer of jd bank with "Sparkonto"
         for(int i = 0; i < beforeSparData.size(); i++){
             
             kid = eaiB.intigratedCustomers.size() + 1;
@@ -77,7 +77,7 @@ public class JDBank {
             kontoart = "";
         
             
-            // Vorname und Nachname
+            // Name intigration
             if(beforeSparData.get(i).vName.value.toString().equalsIgnoreCase("Bendel")){
                 vorname = "Oliver";
                 nachname = "Bendel";
@@ -86,7 +86,7 @@ public class JDBank {
                 nachname = beforeSparData.get(i).nName.value.toString();
             }
             
-            //Wenn der Kunde noch nicht vorhanden ist erstelle den Kunden
+            //Checks if the client is already available or not and create an new Client if not
             if(!eaiB.checkClient(nachname)){
                 //Adresse
                  String[] plzOrt = beforeSparData.get(i).plzOrt.value.toString().split(" ");         
@@ -94,48 +94,46 @@ public class JDBank {
                  String ort = plzOrt[1];
                  adresse = beforeSparData.get(i).strasse.value.toString() + ", " +plz + ", " + ort;
                  
-                 //Laendercode wenn 4 stellig = CH wenn 5 stellig DE
+                 //lCode with 4 letters is always Switzerland
                  if(plz.length()==4){
                      laendercode = "CH";
                  }else{
                      laendercode = "DE";
                  }
-                 
-                 //Status - nicht möglich hier zu setzen weil unbekannt 
-                 status = "";
-                 
-                 //Kunden speichern
+
+                 //Save customers and add to Arraylist with intigrated Customers
                  IntiCustomer client = new IntiCustomer(kid,vorname,nachname,adresse,laendercode,"");
                  eaiB.intigratedCustomers.add(client);
                  
             }
             
-            //Konto wird erstellt
-            //Sparkonten haben nur eine Kontonummer, da es sich aber um die gleiche bank handelt
-            //ist CH und pp (27) immer gleich. Nur die BLZ ändert sich bei Roger der bei einer anderen Filiale
-            //seine Konten hat.
+            /*
+                Account creation
+                Sparkontos just have one accountnumber, it is a swiss bank so there will be always CH in the iban and all
+                have pp (27) except Roger who has an other Account on an other place.
             
+            */
+        
             String kontonummer = beforeSparData.get(i).kontonummer.value.toString();
-
-            
-            //Also wenn Herr Mueller an der reihe ist wird eine andere BLZ genommen = 0901 (09010) da 5 stellig
+          
+            //So here are the changes for Roger Mueller
             if(nachname.equalsIgnoreCase("Mueller")){
                 IBAN = "CH27" + "09010" + "0000" + kontonummer;
-            //Sonst die normale blz der filliale 2201 (22010) da 5 stellig
+            //For ther est the normal Iban
             }else{
                 IBAN = "CH27" + "22010" + "0000" + kontonummer;
             }
             
             kontostand = Double.parseDouble(beforeSparData.get(i).kontostand.value.toString());
-            //System.out.println(convertCurr(kundenSparkonto.get(i).kontostand.value.toString()));
             
             kontoart = "Sparkonto";
-
+            
+            //Save Account and add to ArrayList with intigrated Accounts
             IntiBankAccount account = new IntiBankAccount(eaiB.returnClientID(nachname),IBAN,kontostand,kontoart);
             eaiB.intigratedAccounts.add(account);
         }
 
-        //Schleife welche schaut ob dieser Kunde mit einem Kontokorrentkonto schon mit diesem nachnamen existiert wenn ja setzt er vorhanden auf true
+        //Loop intigrates the data for each customer of jd bank with "Sparkonto"
         for(int i = 0; i < beforeKorrentData.size(); i++){
             
             kid = eaiB.intigratedCustomers.size() + 1;
@@ -149,7 +147,7 @@ public class JDBank {
             kontostand = 0;
             kontoart = "";           
             
-            // Vorname und Nachname
+            //Name intigration
             if(beforeKorrentData.get(i).Vorname.value.toString().equalsIgnoreCase("Bendel")){
                 vorname = "Oliver";
                 nachname = "Bendel";
@@ -158,9 +156,9 @@ public class JDBank {
                 nachname = beforeKorrentData.get(i).Nachname.value.toString();
             }
 
-            //Wenn der Kunde noch nicht vorhanden ist erstelle den Kunden
+            //Creates a new Customer if he isnt in the intigrated ArrayList
             if(!eaiB.checkClient(nachname)){
-                //Adresse 
+                //Adress
                  String[] strasseUndPlzOrt = beforeKorrentData.get(i).Adresse.value.toString().split(",");         
                  String[] strasseUndPlzUndOrt = strasseUndPlzOrt[1].split(" ");
                  
@@ -173,14 +171,13 @@ public class JDBank {
                  //Laendercode
                  laendercode = beforeKorrentData.get(i).Land.value.toString();
                  
-                 //Status
-                 status = "";
-
                  IntiCustomer client = new IntiCustomer(kid,vorname,nachname,adresse,laendercode,"");
                  eaiB.intigratedCustomers.add(client);
             }
-            
-            //Konto wird erstellt
+
+            /*
+                Account creation
+            */
             
             //IBAN
             IBAN = beforeKorrentData.get(i).IBANKontonummer.value.toString();
@@ -192,6 +189,7 @@ public class JDBank {
             //Kontoart
             kontoart = "Kontokorrent";
                        
+            //Save Account and add to ArrayList with intigrated Account
             IntiBankAccount account = new IntiBankAccount(eaiB.returnClientID(nachname),IBAN,kontostand,kontoart);
             eaiB.intigratedAccounts.add(account);
             

@@ -53,7 +53,7 @@ public class EAI_bank {
     
     /*****************************Intigration Standard Methods*********************/
     
-    //Method for setting the Member status
+    //Method returns a String depending on kontostand
     public static String setStatus(double kontostand){
         
         String status = "";
@@ -72,7 +72,7 @@ public class EAI_bank {
         return status;
     }
     
-    //Method with return of all accounts form one person
+    //Method with return of all accounts from one person
     public static double accountValue(EAI_bank eaiB, int i){
         double value = 0;
         double amount = 0;  
@@ -89,6 +89,7 @@ public class EAI_bank {
         return value;
     }
     
+    //Method who sets the status of a single Client
     public static void makeStatus(EAI_bank eaiB){
         for(int i = 0; i< eaiB.intigratedCustomers.size(); i++){
             eaiB.intigratedCustomers.get(i).status = setStatus(accountValue(eaiB, i));
@@ -123,6 +124,7 @@ public class EAI_bank {
        return formatted; 
     }
     
+    //Method returns a boolean if the client already exist or not
     public boolean checkClient(String name){
         
         for(int i = 0; i < intigratedCustomers.size();i++){
@@ -136,6 +138,7 @@ public class EAI_bank {
 
     /*****************************Helper Methods*********************/
     
+    //Method returns an int with the searched client id
     public int returnClientID(String name){
         
         int clientID = 0;
@@ -149,8 +152,9 @@ public class EAI_bank {
         return clientID;       
     }
     
+    //Method writes single datas in the console
     public static void writeSingleData(int cl){
-        System.out.println("DRINNNNNNNNN");
+
         for(int i = 0; i < intigratedCustomers.size(); i++){
             if(intigratedCustomers.get(i).KID== cl){
             System.out.println("Kunde:");
@@ -182,6 +186,7 @@ public class EAI_bank {
         }    
     }
     
+    //Method writes all intigrated Data into console
     public static void writeIntiData(){
         
         for(int i = 0; i < intigratedCustomers.size(); i++){

@@ -22,12 +22,14 @@ public class JDSparData {
     Holder kontonummer = new Holder();
     Holder kontostand = new Holder();
     
+    //Constructor
     public JDSparData(Object nname){
      
         holeSparkonto("", nname.toString(), vName, nName, strasse, plzOrt, zinsen, kontonummer, kontostand);
         
     }
 
+    //Webservice method
     private static void holeSparkonto(java.lang.String queryVorname, java.lang.String queryNachname, javax.xml.ws.Holder<java.lang.String> vorname, javax.xml.ws.Holder<java.lang.String> nachname, javax.xml.ws.Holder<java.lang.String> strasse, javax.xml.ws.Holder<java.lang.String> plzOrt, javax.xml.ws.Holder<java.lang.Float> zinsen, javax.xml.ws.Holder<java.lang.Long> kontonummer, javax.xml.ws.Holder<java.lang.Long> kontostand) {
         ch.fhnw.wi.eai.bankjd.BankJDService service = new ch.fhnw.wi.eai.bankjd.BankJDService();
         ch.fhnw.wi.eai.bankjd.BankJD port = service.getBankJDPort();

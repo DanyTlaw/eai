@@ -20,8 +20,9 @@ public class IntiCustomer {
     String lCode;
     String status;
     
+    //Constructor
     public IntiCustomer(int kid,String vorname, String nachname, String adresse, String lCode, String status){
-        
+       
         this.KID = kid;
         this.vorname = vorname;
         this.nachname = nachname;

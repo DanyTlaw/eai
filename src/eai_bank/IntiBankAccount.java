@@ -12,11 +12,12 @@ package eai_bank;
 public class IntiBankAccount {
         int KID;
     
-    //Konto
+    //Account
     String IBAN;
     double kontostand;
     String kontoart;
     
+    //Constructor 
     public IntiBankAccount(int KID, String IBAN, double kontostand, String kontoart){
         this.KID = KID;
         this.IBAN = IBAN;

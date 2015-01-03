@@ -10,7 +10,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -39,6 +38,7 @@ public class GUI extends JFrame implements ActionListener{
     JLabel lblLCode = new JLabel("Ländercode: ");
     JLabel lblStatus = new JLabel("Status");
      
+    //Constructor
     public GUI(EAI_bank eaiB){
         
         this.eaiB = eaiB;
@@ -46,21 +46,15 @@ public class GUI extends JFrame implements ActionListener{
         this.setLayout(new BorderLayout());
         
         JPanel jplNorth = new JPanel();
-        JPanel jplCenter = new JPanel();
-       
+        JPanel jplCenter = new JPanel();     
         JPanel jplSouth = new JPanel();
         
-
         JPanel jplData = new JPanel();
         jplData.setLayout(new GridLayout(4,1));
         
-        
+       
         ArrayList<JPanel> listAccounts = new ArrayList<JPanel>();
-        //Labels for Person
-        
-        
-        //Labels for Account
-        
+     
         names = new String[eaiB.intigratedCustomers.size()];
         //Save names in Combobox
         for(int i = 0; i< eaiB.intigratedCustomers.size();i++){
@@ -87,6 +81,7 @@ public class GUI extends JFrame implements ActionListener{
                 Object selected = comboBox.getSelectedItem();
                 int nrAcc = 0;
                 
+                //Loop writes information of the client in the GUI
                 for(int i = 0; i < eaiB.intigratedCustomers.size();i++){
                     if(selected.equals(eaiB.intigratedCustomers.get(i).vorname + " "+ eaiB.intigratedCustomers.get(i).nachname)){
                         
@@ -158,6 +153,7 @@ public class GUI extends JFrame implements ActionListener{
         jplSouth.add(jbtConsole);
         jplSouth.add(jbtCSingle);
         
+        //Default GUI settings
         this.add(jplNorth, BorderLayout.NORTH);
         this.add(jplCenter, BorderLayout.CENTER);
         this.add(jplSouth, BorderLayout.SOUTH);
