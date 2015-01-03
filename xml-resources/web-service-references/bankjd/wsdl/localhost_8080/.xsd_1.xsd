@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://www.fhnw.ch/wi/eai/bankjd/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.fhnw.ch/wi/eai/bankjd/">
+
+<xs:element name="holeKontoKorrent" type="tns:holeKontoKorrent"></xs:element>
+
+<xs:element name="holeKontoKorrentResponse" type="tns:holeKontoKorrentResponse"></xs:element>
+
+<xs:element name="holeSparkonto" type="tns:holeSparkonto"></xs:element>
+
+<xs:element name="holeSparkontoResponse" type="tns:holeSparkontoResponse"></xs:element>
+
+<xs:element name="listeKontokorrentNachname" type="tns:listeKontokorrentNachname"></xs:element>
+
+<xs:element name="listeKontokorrentNachnameResponse" type="tns:listeKontokorrentNachnameResponse"></xs:element>
+
+<xs:element name="listeSparkontoNachname" type="tns:listeSparkontoNachname"></xs:element>
+
+<xs:element name="listeSparkontoNachnameResponse" type="tns:listeSparkontoNachnameResponse"></xs:element>
+
+<xs:element name="printKontokorrent" type="tns:printKontokorrent"></xs:element>
+
+<xs:element name="printKontokorrentResponse" type="tns:printKontokorrentResponse"></xs:element>
+
+<xs:element name="printSparkonto" type="tns:printSparkonto"></xs:element>
+
+<xs:element name="printSparkontoResponse" type="tns:printSparkontoResponse"></xs:element>
+
+<xs:complexType name="holeSparkonto">
+<xs:sequence>
+<xs:element name="queryVorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="queryNachname" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeSparkontoResponse">
+<xs:sequence>
+<xs:element name="vorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nachname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="strasse" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="plzOrt" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="zinsen" type="xs:float" minOccurs="0"></xs:element>
+<xs:element name="kontonummer" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="kontostand" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeKontokorrentNachname">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeKontokorrentNachnameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printSparkonto">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printSparkontoResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeKontoKorrent">
+<xs:sequence>
+<xs:element name="queryVorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="queryNachname" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeKontoKorrentResponse">
+<xs:sequence>
+<xs:element name="vorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nachname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="adresse" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="land" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="ranking" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="ibanKontonummer" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="kontostand" type="xs:float" minOccurs="0"></xs:element>
+<xs:element name="bic" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeSparkontoNachname">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeSparkontoNachnameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printKontokorrent">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printKontokorrentResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+</xs:schema>
