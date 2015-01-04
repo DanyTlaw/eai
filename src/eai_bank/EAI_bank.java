@@ -35,14 +35,16 @@ public class EAI_bank {
         JDBank jdB = new JDBank();
         VCTBank vctB = new VCTBank();
         
+
+        
         //Data integration
         vctB.vctIntigration(eaiB);
         jdB.jdIntegration(eaiB);
 
-        //Status hinzufügen
+        //Add Status
         makeStatus(eaiB);
-        
-        //GUi geöffnet mit Daten
+
+        //Create and open Gui
         GUI gui = new GUI(eaiB);
         
     }
@@ -150,40 +152,6 @@ public class EAI_bank {
 
         }
         return clientID;       
-    }
-    
-    //Method writes single datas in the console
-    public static void writeSingleData(int cl){
-
-        for(int i = 0; i < intigratedCustomers.size(); i++){
-            if(intigratedCustomers.get(i).KID== cl){
-            System.out.println("Kunde:");
-            System.out.println("-------------------------------------------");
-            System.out.println("KID:        " + intigratedCustomers.get(i).KID);
-            System.out.println("Vorname:    " + intigratedCustomers.get(i).vorname);
-            System.out.println("Nachname:   " + intigratedCustomers.get(i).nachname);
-            System.out.println("Adresse:    " + intigratedCustomers.get(i).adresse);
-            System.out.println("Ländercode: " + intigratedCustomers.get(i).lCode);
-            System.out.println("Status      " + intigratedCustomers.get(i).status);
-            System.out.println("-------------------------------------------");
-            }
-        }
-        
-
-    
-        for(int i = 0; i < intigratedAccounts.size(); i++){
-            if(intigratedAccounts.get(i).KID == cl){
-                System.out.println("KID:        " + intigratedAccounts.get(i).KID);
-                System.out.println("IBAN:       " + intigratedAccounts.get(i).IBAN);
-                System.out.println("Kontostand: " + intigratedAccounts.get(i).kontostand);  
-                System.out.println("Kontostand formatiert: " + convertCurr("" + intigratedAccounts.get(i).kontostand));
-                System.out.println("Kontoart:   " + intigratedAccounts.get(i).kontoart);
-                System.out.println("-------------------------------------------");
-                
-                
-            }
-            
-        }    
     }
     
     //Method writes all intigrated Data into console

@@ -26,7 +26,7 @@ public class GUI extends JFrame implements ActionListener{
     EAI_bank eaiB;
     
     JButton jbtConsole;
-    JButton jbtCSingle;
+    JButton jbtSaveTxt;
     
     JComboBox cmbClients;
     
@@ -65,7 +65,7 @@ public class GUI extends JFrame implements ActionListener{
        
         cmbClients = new JComboBox(names);
         jbtConsole = new JButton("Alle ausgeben");
-        jbtCSingle = new JButton("Kunden ausgeben");
+        jbtSaveTxt = new JButton("Textdatei speichern");
         
         cmbClients.addActionListener(new ActionListener() {
             
@@ -146,13 +146,14 @@ public class GUI extends JFrame implements ActionListener{
             }
         });
         jbtConsole.addActionListener(this);
-        jbtCSingle.addActionListener(this);
+
+        jbtSaveTxt.addActionListener(this);
         
         jplNorth.add(cmbClients);
         jplCenter.add(jplData);
         jplSouth.add(jbtConsole);
-        jplSouth.add(jbtCSingle);
-        
+
+        jplSouth.add(jbtSaveTxt);
         //Default GUI settings
         this.add(jplNorth, BorderLayout.NORTH);
         this.add(jplCenter, BorderLayout.CENTER);
@@ -169,8 +170,8 @@ public class GUI extends JFrame implements ActionListener{
         if(e.getSource() == jbtConsole){
             eaiB.writeIntiData();
         }
-        else if(e.getSource() == jbtCSingle){
-            eaiB.writeSingleData(cmbClients.getItemCount());
+        else if(e.getSource() == jbtSaveTxt){
+            WriteToFile txt = new WriteToFile(eaiB);
         }
     }
         
