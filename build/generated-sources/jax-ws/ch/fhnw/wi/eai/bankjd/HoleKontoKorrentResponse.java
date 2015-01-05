@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für holeKontoKorrentResponse complex type.
+ * <p>Java class for holeKontoKorrentResponse complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="holeKontoKorrentResponse">
@@ -55,7 +55,7 @@ public class HoleKontoKorrentResponse {
     protected String bic;
 
     /**
-     * Ruft den Wert der vorname-Eigenschaft ab.
+     * Gets the value of the vorname property.
      * 
      * @return
      *     possible object is
@@ -67,7 +67,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der vorname-Eigenschaft fest.
+     * Sets the value of the vorname property.
      * 
      * @param value
      *     allowed object is
@@ -79,7 +79,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der nachname-Eigenschaft ab.
+     * Gets the value of the nachname property.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der nachname-Eigenschaft fest.
+     * Sets the value of the nachname property.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +103,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der adresse-Eigenschaft ab.
+     * Gets the value of the adresse property.
      * 
      * @return
      *     possible object is
@@ -115,7 +115,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der adresse-Eigenschaft fest.
+     * Sets the value of the adresse property.
      * 
      * @param value
      *     allowed object is
@@ -127,7 +127,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der land-Eigenschaft ab.
+     * Gets the value of the land property.
      * 
      * @return
      *     possible object is
@@ -139,7 +139,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der land-Eigenschaft fest.
+     * Sets the value of the land property.
      * 
      * @param value
      *     allowed object is
@@ -151,7 +151,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der ranking-Eigenschaft ab.
+     * Gets the value of the ranking property.
      * 
      * @return
      *     possible object is
@@ -163,7 +163,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der ranking-Eigenschaft fest.
+     * Sets the value of the ranking property.
      * 
      * @param value
      *     allowed object is
@@ -175,7 +175,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der ibanKontonummer-Eigenschaft ab.
+     * Gets the value of the ibanKontonummer property.
      * 
      * @return
      *     possible object is
@@ -187,7 +187,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der ibanKontonummer-Eigenschaft fest.
+     * Sets the value of the ibanKontonummer property.
      * 
      * @param value
      *     allowed object is
@@ -199,7 +199,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der kontostand-Eigenschaft ab.
+     * Gets the value of the kontostand property.
      * 
      * @return
      *     possible object is
@@ -211,7 +211,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der kontostand-Eigenschaft fest.
+     * Sets the value of the kontostand property.
      * 
      * @param value
      *     allowed object is
@@ -223,7 +223,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Ruft den Wert der bic-Eigenschaft ab.
+     * Gets the value of the bic property.
      * 
      * @return
      *     possible object is
@@ -235,7 +235,7 @@ public class HoleKontoKorrentResponse {
     }
 
     /**
-     * Legt den Wert der bic-Eigenschaft fest.
+     * Sets the value of the bic property.
      * 
      * @param value
      *     allowed object is

@@ -157,6 +157,12 @@ public class VCTBank {
                     eaiB.intigratedAccounts.add(intiBA);
                     }     
            }
+           
+           // No data from db needed so close connection now
+           beforeVctData.closeCon();
+           
+           System.out.println("Daten der Bank VCT gesammelt.");
+           
        } catch (SQLException ex) {
            Logger.getLogger(VCTBank.class.getName()).log(Level.SEVERE, null, ex);
        }

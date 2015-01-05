@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/tdanylaw/NetBeansProjects/eai/src/eai_bank/EAI_bank.java</file>
-            <file>file:/home/tdanylaw/NetBeansProjects/eai/src/eai_bank/GUI.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/VCTBank.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/EAI_bank.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/WriteToCsv.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/JDBank.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/VctData.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/WriteToFile.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/IntiBankAccount.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/GUI.java</file>
+            <file>file:/home/yps/workspace/fhnw/eai/src/eai_bank/IntiCustomer.java</file>
         </group>
     </open-files>
 </project-private>

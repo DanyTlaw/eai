@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für holeSparkonto complex type.
+ * <p>Java class for holeSparkonto complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="holeSparkonto">
@@ -37,7 +37,7 @@ public class HoleSparkonto {
     protected String queryNachname;
 
     /**
-     * Ruft den Wert der queryVorname-Eigenschaft ab.
+     * Gets the value of the queryVorname property.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class HoleSparkonto {
     }
 
     /**
-     * Legt den Wert der queryVorname-Eigenschaft fest.
+     * Sets the value of the queryVorname property.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class HoleSparkonto {
     }
 
     /**
-     * Ruft den Wert der queryNachname-Eigenschaft ab.
+     * Gets the value of the queryNachname property.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class HoleSparkonto {
     }
 
     /**
-     * Legt den Wert der queryNachname-Eigenschaft fest.
+     * Sets the value of the queryNachname property.
      * 
      * @param value
      *     allowed object is

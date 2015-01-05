@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für holeSparkontoResponse complex type.
+ * <p>Java class for holeSparkontoResponse complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="holeSparkontoResponse">
@@ -52,7 +52,7 @@ public class HoleSparkontoResponse {
     protected Long kontostand;
 
     /**
-     * Ruft den Wert der vorname-Eigenschaft ab.
+     * Gets the value of the vorname property.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der vorname-Eigenschaft fest.
+     * Sets the value of the vorname property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der nachname-Eigenschaft ab.
+     * Gets the value of the nachname property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der nachname-Eigenschaft fest.
+     * Sets the value of the nachname property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der strasse-Eigenschaft ab.
+     * Gets the value of the strasse property.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der strasse-Eigenschaft fest.
+     * Sets the value of the strasse property.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der plzOrt-Eigenschaft ab.
+     * Gets the value of the plzOrt property.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der plzOrt-Eigenschaft fest.
+     * Sets the value of the plzOrt property.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +148,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der zinsen-Eigenschaft ab.
+     * Gets the value of the zinsen property.
      * 
      * @return
      *     possible object is
@@ -160,7 +160,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der zinsen-Eigenschaft fest.
+     * Sets the value of the zinsen property.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +172,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der kontonummer-Eigenschaft ab.
+     * Gets the value of the kontonummer property.
      * 
      * @return
      *     possible object is
@@ -184,7 +184,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der kontonummer-Eigenschaft fest.
+     * Sets the value of the kontonummer property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +196,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Ruft den Wert der kontostand-Eigenschaft ab.
+     * Gets the value of the kontostand property.
      * 
      * @return
      *     possible object is
@@ -208,7 +208,7 @@ public class HoleSparkontoResponse {
     }
 
     /**
-     * Legt den Wert der kontostand-Eigenschaft fest.
+     * Sets the value of the kontostand property.
      * 
      * @param value
      *     allowed object is

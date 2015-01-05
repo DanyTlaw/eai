@@ -19,7 +19,7 @@ public class VctData {
     // Database Connection Definitions
     String dbhost = "jdbc:mysql://localhost:3306/eai";
     String dbuser = "root";
-    String dbpw = "pp34wf";
+    String dbpw = "root";
     Connection con = null;
 
     // SQL Definitions
@@ -47,5 +47,15 @@ public class VctData {
         } catch (Exception e) {
             System.out.println("Problems with the DB.");
         }     
+    }
+    
+    public void closeCon(){
+        
+        // Close DB connection
+        try{
+            con.close();
+        } catch(Exception e){
+            System.out.println("Fehler beim Schliessen der DB-Verbindung");
+        } 
     }
 }

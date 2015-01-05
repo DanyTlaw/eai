@@ -15,8 +15,7 @@ public class JDBank {
     // Arrays with all the data from the webservice divided by Spar- Firmenkonto
     public ArrayList<JDSparData> beforeSparData = new ArrayList<JDSparData>();
     public ArrayList<JDKorrentData> beforeKorrentData = new ArrayList<JDKorrentData>();
-    
-    // Arrays with all the new integrated data 
+
     
     
     //Constructor loads all datas
@@ -28,8 +27,8 @@ public class JDBank {
         try{
             SearchSparName = listeSparkontoNachname().toArray();
         }catch (Exception e){
-            System.out.println("> Webservice nicht erreichbar.");
-            System.out.println("> Beende Applikation.");
+            System.out.println("Webservice nicht erreichbar.");
+            System.out.println("Beende Applikation.");
             System.exit(1);
         }
         
@@ -45,6 +44,8 @@ public class JDBank {
             JDKorrentData kunde = new JDKorrentData(sname);
             beforeKorrentData.add(kunde);
         }
+        
+        System.out.println("Daten der Bank JD gesammelt.");
     }
 
     public void jdIntegration(EAI_bank eaiB){
@@ -202,7 +203,7 @@ public class JDBank {
     }
     
     
-    //Webservice functions
+    // Webservice functions
     private static java.util.List<java.lang.String> listeSparkontoNachname() {
         ch.fhnw.wi.eai.bankjd.BankJDService service = new ch.fhnw.wi.eai.bankjd.BankJDService();
         ch.fhnw.wi.eai.bankjd.BankJD port = service.getBankJDPort();

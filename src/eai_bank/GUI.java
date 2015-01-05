@@ -27,6 +27,7 @@ public class GUI extends JFrame implements ActionListener{
     
     JButton jbtConsole;
     JButton jbtSaveTxt;
+    JButton jbtSaveCsv;
     
     JComboBox cmbClients;
     
@@ -64,8 +65,9 @@ public class GUI extends JFrame implements ActionListener{
       
        
         cmbClients = new JComboBox(names);
-        jbtConsole = new JButton("Alle ausgeben");
-        jbtSaveTxt = new JButton("Textdatei speichern");
+        jbtConsole = new JButton("Alle Daten ausgeben");
+        jbtSaveTxt = new JButton("Als Textdatei exportieren");
+        jbtSaveCsv = new JButton("Als CSV-Datei exportieren");
         
         cmbClients.addActionListener(new ActionListener() {
             
@@ -145,21 +147,24 @@ public class GUI extends JFrame implements ActionListener{
              validate();
             }
         });
+        
         jbtConsole.addActionListener(this);
-
         jbtSaveTxt.addActionListener(this);
+        jbtSaveCsv.addActionListener(this);
         
         jplNorth.add(cmbClients);
         jplCenter.add(jplData);
         jplSouth.add(jbtConsole);
 
         jplSouth.add(jbtSaveTxt);
+        jplSouth.add(jbtSaveCsv);
+        
         //Default GUI settings
         this.add(jplNorth, BorderLayout.NORTH);
         this.add(jplCenter, BorderLayout.CENTER);
         this.add(jplSouth, BorderLayout.SOUTH);
         this.setSize(700,600);
-        this.setLocation(300,300);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("EAI Bank");
         this.setVisible(true);
@@ -172,6 +177,9 @@ public class GUI extends JFrame implements ActionListener{
         }
         else if(e.getSource() == jbtSaveTxt){
             WriteToFile txt = new WriteToFile(eaiB);
+        }
+        else if(e.getSource() == jbtSaveCsv){
+            WriteToCsv csv = new WriteToCsv(eaiB);
         }
     }
         

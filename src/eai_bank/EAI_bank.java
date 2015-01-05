@@ -36,12 +36,11 @@ public class EAI_bank {
         VCTBank vctB = new VCTBank();
         
 
-        
         //Data integration
         vctB.vctIntigration(eaiB);
         jdB.jdIntegration(eaiB);
 
-        //Add Status
+        // Add Status
         makeStatus(eaiB);
 
         //Create and open Gui
@@ -87,7 +86,7 @@ public class EAI_bank {
             }
 
         }
-        System.out.println(value);
+        //System.out.println(value);
         return value;
     }
     

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eai_bank;
 
 import java.io.BufferedWriter;
@@ -11,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +21,12 @@ public class WriteToFile {
         
         try {
             File newFile =  new File("EAI_bank.txt");
+            
+            // Check if the file already exists
+            if(newFile.isFile()){
+                newFile.delete();
+                System.out.println("Alte Textdatei entfernt.");
+            }
             
             newFile.createNewFile();
             
@@ -65,6 +67,9 @@ public class WriteToFile {
                 }
             }
             bw.close();
+            
+            // Information for the user
+            JOptionPane.showMessageDialog(null, "Der Text-Export der Daten war erfolgreich.", "Text Export", JOptionPane.INFORMATION_MESSAGE);
             
             
         } catch (IOException ex) {
